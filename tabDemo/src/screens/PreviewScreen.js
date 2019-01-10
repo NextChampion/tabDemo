@@ -7,10 +7,21 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 
 type Props = {};
 export default class PreviewScreen extends Component<Props> {
+  static navigationOptions = ({ navigation }) => ({
+    headerLeft: (
+      <TouchableOpacity onPress={()=>navigation.goBack()}>
+        <View style={styles.headerLeft}>
+          <Text>返回</Text>
+        </View>
+      </TouchableOpacity>
+    ),
+    // header: null,
+  });
+
   render() {
     return (
       <View style={styles.container}>
@@ -26,6 +37,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  headerLeft: {
+    width: 60,
+    height: 44,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   instructions: {
     textAlign: 'center',
