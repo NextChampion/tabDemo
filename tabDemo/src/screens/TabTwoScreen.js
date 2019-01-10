@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View, Image} from 'react-native';
 
 type Props = {};
 export default class TabTwoScreen extends Component<Props> {
@@ -15,7 +15,8 @@ export default class TabTwoScreen extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.instructions}>TabTwoScreen</Text>
-        <Text style={styles.instructions}>刚刚从TabOne切换到TabTwo</Text>
+        <Image style={styles.image} source={{uri: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1547142830889&di=ccbf5d2105c5e02503ba6a1630a7c145&imgtype=0&src=http%3A%2F%2Fimg.tukexw.com%2Fimg%2Fd98893b85b36dfa4.jpg'}}/>
+        <Text style={styles.instructions}>欢迎来到TabTwo</Text>
       </View>
     );
   }
@@ -26,12 +27,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  image: {
+    width: 300,
+    height: 300,
   },
   instructions: {
     textAlign: 'center',

@@ -32,7 +32,7 @@ export default class TabOneScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.instructions}>TabOneScreen</Text>
+        <Text style={styles.instructions}>点击下方按钮查看预览页</Text>
         <Button title="Modal" onPress={this.onButtonClick}/>
       </View>
     );

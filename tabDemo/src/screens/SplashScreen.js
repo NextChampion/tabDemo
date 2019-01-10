@@ -42,8 +42,8 @@ export default class SplashScreen extends Component<Props> {
     const { number } = this.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.instructions}>SplashScreen</Text>
-        <Text style={styles.instructions}>{number}</Text>
+        <Text style={styles.content}>这是17号大小的文字</Text>
+        <Text style={styles.instructions}>您还有{number}秒进入主页面</Text>
       </View>
     );
   }
@@ -56,14 +56,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
+  content: {
+    fontSize: 17,
     textAlign: 'center',
     margin: 10,
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
+    marginTop: 15,
   },
 });
