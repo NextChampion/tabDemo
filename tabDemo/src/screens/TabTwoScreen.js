@@ -15,6 +15,7 @@ export default class TabTwoScreen extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.instructions}>TabTwoScreen</Text>
+        <Text style={styles.instructions}>刚刚从TabOne切换到TabTwo</Text>
       </View>
     );
   }

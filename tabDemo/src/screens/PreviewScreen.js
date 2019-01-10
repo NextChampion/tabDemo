@@ -13,19 +13,23 @@ type Props = {};
 export default class PreviewScreen extends Component<Props> {
   static navigationOptions = ({ navigation }) => ({
     headerLeft: (
-      <TouchableOpacity onPress={()=>navigation.goBack()}>
+      <TouchableOpacity onPress={()=>{
+          console.log('navigation', navigation);
+          navigation.goBack();
+          navigation.state && navigation.state.params && navigation.state.params.toTabTwo && navigation.state.params.toTabTwo();
+        }}>
         <View style={styles.headerLeft}>
           <Text>返回</Text>
         </View>
       </TouchableOpacity>
     ),
-    // header: null,
   });
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.instructions}>PreviewScreen</Text>
+        <Image style={styles.image} source={{url: 'https://imgs.xkcd.com/comics/mattresses_2x.png'}}/>
       </View>
     );
   }
@@ -43,6 +47,10 @@ const styles = StyleSheet.create({
     height: 44,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  image: {
+    width: 145,
+    height: 235,
   },
   instructions: {
     textAlign: 'center',

@@ -8,15 +8,27 @@
 
 import React, {Component} from 'react';
 import { StyleSheet, Text, View} from 'react-native';
+import { NavigationActions } from 'react-navigation';
+
 import Button from './components/Button';
 
 type Props = {};
 export default class TabOneScreen extends Component<Props> {
   onButtonClick = () => {
     const { navigation } = this.props;
-    navigation.navigate('preview');
+    navigation.navigate('preview',{
+      toTabTwo: this.toTabTwo,
+    });
   }
-  
+
+  toTabTwo = () => {
+    const { navigation } = this.props;
+    console.log('toTabTwo',navigation);
+    navigation.dispatch(
+      NavigationActions.navigate({ routeName:'Two' }),
+    );
+  }
+
   render() {
     return (
       <View style={styles.container}>
