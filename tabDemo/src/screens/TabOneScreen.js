@@ -8,13 +8,20 @@
 
 import React, {Component} from 'react';
 import { StyleSheet, Text, View} from 'react-native';
+import Button from './components/Button';
 
 type Props = {};
 export default class TabOneScreen extends Component<Props> {
+  onButtonClick = () => {
+    const { navigation } = this.props;
+    navigation.navigate('preview');
+  }
+  
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.instructions}>TabOneScreen</Text>
+        <Button title="Modal" onPress={this.onButtonClick}/>
       </View>
     );
   }
