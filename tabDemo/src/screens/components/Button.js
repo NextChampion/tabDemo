@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default class Button extends Component {
   static propTypes = {
     onPress: PropTypes.func,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
   };
 
   static defaultProps = {
@@ -13,17 +13,11 @@ export default class Button extends Component {
     title: 'button',
   };
 
-  state = {
-    loading: false,
-  };
-
-  shouldComponentUpdate(nextProps, state) {
+  shouldComponentUpdate() {
     return false;
   }
 
-
   render() {
-    console.debug('[render] Button');
     const { title, onPress } = this.props;
     return (
       <TouchableOpacity onPress={onPress}>

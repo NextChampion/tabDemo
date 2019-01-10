@@ -6,15 +6,19 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 type Props = {};
 export default class OtherScreen extends Component<Props> {
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.instructions}>OtherScreen</Text>
+        <Text style={styles.text}>OtherScreen</Text>
       </View>
     );
   }
@@ -27,12 +31,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
+  text: {
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,

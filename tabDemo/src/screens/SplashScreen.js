@@ -6,31 +6,31 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 type Props = {};
 export default class SplashScreen extends Component<Props> {
-
   state = {
     number: 3,
-  }
+  };
 
   setInterval = {};
+
   stateAvaliable = true;
 
   componentDidMount() {
-    this.setInterval = setInterval(()=>{
+    this.setInterval = setInterval(() => {
       const { number } = this.state;
       const nextNumberState = number - 1;
       if (nextNumberState > 0 && this.stateAvaliable) {
-        this.setState({number: nextNumberState});
+        this.setState({ number: nextNumberState });
       }
     }, 1000);
-    setTimeout(()=>{
+    setTimeout(() => {
       const { navigation } = this.props;
       navigation.navigate('main');
-    },3000);
+    }, 3000);
   }
 
   componentWillUnount() {

@@ -6,18 +6,22 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
 type Props = {};
 export default class PreviewScreen extends Component<Props> {
   static navigationOptions = ({ navigation }) => ({
     headerLeft: (
-      <TouchableOpacity onPress={()=>{
-          console.log('navigation', navigation);
+      <TouchableOpacity
+        onPress={() => {
           navigation.goBack();
-          navigation.state && navigation.state.params && navigation.state.params.toTabTwo && navigation.state.params.toTabTwo();
-        }}>
+          navigation.state &&
+            navigation.state.params &&
+            navigation.state.params.toTabTwo &&
+            navigation.state.params.toTabTwo();
+        }}
+      >
         <View style={styles.headerLeft}>
           <Text>返回</Text>
         </View>
@@ -29,7 +33,10 @@ export default class PreviewScreen extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.instructions}>PreviewScreen</Text>
-        <Image style={styles.image} source={{url: 'https://imgs.xkcd.com/comics/mattresses_2x.png'}}/>
+        <Image
+          style={styles.image}
+          source={{ url: 'https://imgs.xkcd.com/comics/mattresses_2x.png' }}
+        />
       </View>
     );
   }
@@ -46,7 +53,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 44,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   image: {
     width: 145,

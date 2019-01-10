@@ -5,9 +5,9 @@ import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 
 const TabNavigator = createBottomTabNavigator({
-    One: TabOneScreen,
-    Two: TabTwoScreen,
-  });
+  One: TabOneScreen,
+  Two: TabTwoScreen,
+});
 
 TabNavigator.navigationOptions = ({ navigation }) => {
   const { routeName } = navigation.state.routes[navigation.state.index];
