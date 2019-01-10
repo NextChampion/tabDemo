@@ -7,23 +7,14 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 
 type Props = {};
-export default class SplashScreen extends Component<Props> {
-
-  componentDidMount() {
-    setTimeout(()=>{
-      const { navigation } = this.props;
-      navigation.navigate('main');
-    })
-  }
-
-
+export default class TabTwoScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.instructions}>SplashScreen</Text>
+        <Text style={styles.instructions}>TabTwoScreen</Text>
       </View>
     );
   }
